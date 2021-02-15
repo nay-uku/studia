@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://shake/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://shake/">
+
+<xs:element name="addHash" type="tns:addHash"/>
+
+<xs:element name="addHashResponse" type="tns:addHashResponse"/>
+
+<xs:element name="deleteHash" type="tns:deleteHash"/>
+
+<xs:element name="executeModifyQuery" type="tns:executeModifyQuery"/>
+
+<xs:element name="getAllHash" type="tns:getAllHash"/>
+
+<xs:element name="getAllHashResponse" type="tns:getAllHashResponse"/>
+
+<xs:element name="getHash" type="tns:getHash"/>
+
+<xs:element name="getHashResponse" type="tns:getHashResponse"/>
+
+<xs:complexType name="executeModifyQuery">
+<xs:sequence>
+<xs:element name="sql" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addHash">
+<xs:sequence>
+<xs:element name="hashe" type="tns:hashe" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hashe">
+<xs:sequence>
+<xs:element name="bity" type="xs:int"/>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
+<xs:element name="shake128" type="xs:string" minOccurs="0"/>
+<xs:element name="tekst" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addHashResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="deleteHash">
+<xs:sequence>
+<xs:element name="hashe" type="tns:hashe" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllHash">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAllHashResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getHash">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getHashResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:hashe" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

@@ -1,0 +1,1 @@
+Wersja kompletna. Dodano mozliwosc zapisu danych.

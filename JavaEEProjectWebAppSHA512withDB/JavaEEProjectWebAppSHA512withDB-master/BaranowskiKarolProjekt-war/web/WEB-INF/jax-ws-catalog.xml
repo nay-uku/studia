@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/shake128WS/shake128WS?wsdl" uri="wsdl/localhost_8080/shake128WS/shake128WS.wsdl"/>
+    <system systemId="http://localhost:8080/shake128WS/shake128WS?xsd=1" uri="wsdl/localhost_8080/shake128WS/shake128WS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/HasheWS/HasheWS?WSDL" uri="wsdl/localhost_8080/HasheWS/HasheWS.wsdl"/>
+    <system systemId="http://localhost:8080/HasheWS/HasheWS?xsd=1" uri="wsdl/localhost_8080/HasheWS/HasheWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/HashTableWS/HashTableWS?WSDL" uri="wsdl/localhost_8080/HashTableWS/HashTableWS.wsdl"/>
+    <system systemId="http://localhost:8080/HashTableWS/HashTableWS?xsd=1" uri="wsdl/localhost_8080/HashTableWS/HashTableWS.xsd_1.xsd"/>
+</catalog>

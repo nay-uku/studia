@@ -1,0 +1,1 @@
+Program do zarządania przychodnią w VS. Dodawania wizyt, pacjentów etc.

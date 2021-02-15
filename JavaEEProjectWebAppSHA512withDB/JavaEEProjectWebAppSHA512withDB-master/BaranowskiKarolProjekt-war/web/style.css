@@ -1,0 +1,86 @@
+body
+{
+	background-color: #1B1B33;
+	color: #ffffff;
+	-webkit-text-stroke: 0.2px black;
+	font-family: 'Didact Gothic', sans-serif;
+	font-size: 20px;
+}
+h3{
+	font-family: 'Josefin Slab', sans-serif;
+	font-size: 30px;
+	text-shadow: 2px 2px #000000;
+	color: #00ff00;
+        margin-top: 0px;
+}
+#container
+{
+	width:1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.rectangle1
+{
+	width: 1000px;
+	text-align: center;
+}
+.rectangle
+{
+	width: 960px;
+	margin:20px;
+	text-align: center;
+}
+.square
+{
+	width: 100%;
+	float: left;
+}
+#logo
+{
+	padding-left: 10px;
+	text-align: left;
+	color: #00ff00;
+	text-shadow: 5px 2px #000000;
+	width: 660px;
+	margin:10px;
+	font-family:'Didact Gothic', serif;
+	font-style: italic bold; 
+	font-size: 50px;
+	float: left;
+	background-color: #463B75;
+}
+#timer
+{
+	width:250px;
+	margin: 10px;
+	color: #00ff00;
+	text-shadow: 5px 2px #000000;
+	font-family:'Didact Gothic', serif;
+	font-style: italic bold; 
+	font-size: 50px;
+	background-color: #463B75;
+	float: left;
+}
+.tile5
+{
+	margin: 10px;
+	width: 920px;
+	min-height: 451px;
+	background-color: #3075d3;
+	text-align: justify;
+	padding: 10px;
+}
+a {
+  color: black;
+  text-decoration: none; 
+}
+a:hover {
+  color: black;
+  text-decoration: none; 
+}
+a:visited {
+  color: black;
+  text-decoration: none; 
+}
+
+

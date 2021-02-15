@@ -1,0 +1,1 @@
+Program producent - konsument, wykorzystujący pipe i shared memory na system Linux. Więcej informacji w sprawozdaniu.

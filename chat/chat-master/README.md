@@ -1,0 +1,1 @@
+Prosty symulator chatu internetowego w przeglądarce

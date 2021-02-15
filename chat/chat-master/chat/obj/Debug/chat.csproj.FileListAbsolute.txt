@@ -1,0 +1,5 @@
+c:\users\rhag\documents\visual studio 2012\Projects\chat\chat\bin\chat.dll
+c:\users\rhag\documents\visual studio 2012\Projects\chat\chat\bin\chat.pdb
+c:\users\rhag\documents\visual studio 2012\Projects\chat\chat\obj\Debug\chat.dll
+c:\users\rhag\documents\visual studio 2012\Projects\chat\chat\obj\Debug\chat.pdb
+c:\users\rhag\documents\visual studio 2012\Projects\chat\chat\obj\Debug\chat.csprojResolveAssemblyReference.cache
