@@ -1,0 +1,72 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+<style>
+.times {
+     font-family: 'Times New Roman', Times, serif;
+}
+
+
+
+
+
+
+</style>
+<a class="p-2 text-dark times" href="/forum/add_post">DODAJ POST</a>
+<div class="container" style="border:1px solid black;height:100%;background-color:#B6B6B4;">
+    <div class="row">
+        <h3 class="times" style="margin:auto;
+        line-height:51px;
+        vertical-align:middle;">FORUM</h3>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-lg">
+
+            <div class="container">
+                {% for tup in forum_posts %}
+                <div class="row" style="border:1px solid black;">
+                    <div class="col-" style="border-right:1px solid black;">
+
+                        <div class="container" style="width:100%;height:100%;">
+                            <div class="row">
+
+                                Utworzono przez: {{ tup[2] }}<br/>
+                                Dodano: {{ tup[3] }}
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg">
+
+                        <a class="p-2 text-dark times" href="/forum/post?p={{tup[4]}}"><h3>{{tup[0]}}</h3></a>
+
+                    </div>
+
+
+                </div>
+                {% endfor %}
+
+            </div>
+
+
+        </div>
+
+        <div class="col- times mr-2" style="border:1px solid black">
+
+            Ostatnio zalogowani:
+            {% for tup in forum_users %}
+            <p>{{ "{} : {}".format(tup[0].decode('utf-8'), tup[1]) }} </p>
+
+
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

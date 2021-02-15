@@ -1,0 +1,27 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+    <!--<h5 class="my-0 mr-md-auto font-weight-normal"><a class="navbar-brand text-dark" href="/">NoSQL app 2020</a></h5>-->
+    <a class="my-0 mr-md-auto font-weight-normal" href="/">
+        <img src="/static/python.png" width="40" height="40" style="display: inline-block"/>
+    </a>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="/forum">Forum</a>
+        <a class="p-2 text-dark" href="/chat">Chat</a>
+        <a class="p-2 text-dark" href="/daily_logs">Logi</a>
+        <a class="p-2 text-dark" href="/listings">Produkty</a>
+        <a class="p-2 text-dark" href="/cart">Koszyk</a>
+    </nav>
+    {% if timestamp %}
+    <a class="p-2 text-dark">[redis] Ostatnio zalogowano: {{ timestamp }}</a>
+    {% endif %}
+    {% if user %}
+    <form class="mt-2 mt-md-0" method=POST action="{{ url_for('logout') }}">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">{{ "{} - {}".format(user, "Wyloguj") }}</button>
+    </form>
+    {% endif %}
+
+
+
+    {% if not user %}
+    <a class="btn btn-outline-primary" href="{{ url_for('login') }}">Zaloguj się</a>
+    {% endif %}
+</div>

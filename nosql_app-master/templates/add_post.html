@@ -1,0 +1,27 @@
+<!-- Wykorzystuje HTML zawarty w layout.html -->
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="jumbotron text-center col-md-8 mx-auto" style="width:30%">
+    <form method=POST action="{{ url_for('add_post') }}" class="form-signin">
+      <img class="mb-4" src="/static/python.png" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Dodaj post</h1>
+      <label for="inputTitle" class="sr-only">Tytuł</label>
+      <input type="title" id="inputTitle" class="form-control" placeholder="Tytuł" name="title" required autofocus>
+      <label for="inputText" class="sr-only">Treść</label>
+      <input type="text" id="inputText" class="form-control" placeholder="Treść" name="text" required>
+      <!--<div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>-->
+      {% if error %}
+      <p class="mt-2 mb-2" style="color:#a71d2a">Próba dodania posta nie powiodła się</p>
+      {% endif %}
+      <button class="btn btn-lg btn-primary btn-block mt-2" type="submit">Dodaj</button>
+    </form>
+
+
+</div>
+{% endblock %}

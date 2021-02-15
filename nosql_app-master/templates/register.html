@@ -1,0 +1,31 @@
+<!-- Wykorzystuje HTML zawarty w layout.html -->
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="jumbotron text-center col-md-8 mx-auto">
+    <form method=POST action="{{ url_for('register') }}">
+        <div class="form-group">
+            <label for="email">Adres e-mail</label>
+            <input type="text" class="form-control" name="email" placeholder="Username">
+        </div>
+        <div class="form-group">
+            <label for="password">Hasło</label>
+            <input type="password" class="form-control" name="password" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <label for="imie">Imię</label>
+            <input type="text" class="form-control" name="imie" placeholder="Imię">
+        </div>
+        <div class="form-group">
+            <label for="nazwisko">Nazwisko</label>
+            <input type="text" class="form-control" name="nazwisko" placeholder="Nazwisko">
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Zarejestruj się</button>
+
+    </form>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,70 @@
+docker pull redis/mongo/... (tylko raz dla każdej bazy) //sciągnij obraz
+MONGO:
+docker run -d --name mongodb -p 27017:27017 mongo // uruchom kontener z bazą w tle (-d) z nazwą mongodb i udostępnij go po loopbacku dla localhosta na port 27017 z portu 27017 wewnątrz kontenera
+docker exec -it mongodb bash //utwórz w kontenerze sesję bash po nazwie
+mongo //zarządzanie bazą
+
+REDIS:
+docker run -d --name mongodb -p 27017:27017 redis
+docker exec -it redis bash
+redis-cli //zarządzanie bazą
+
+ELK:
+w folderze docker-elk polecenie:
+docker-compose up -d
+
+------------------------------------------------------------------------------------------------------------------------
+CASSANDRA:
+sudo docker run --network host --name test-cassandra -d cassandra:latest
+
+# Konfiguracja bazy
+sudo docker exec -it test-cassandra cqlsh
+CREATE KEYSPACE cassandra_nosql WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3};
+USE cassandra_nosql;
+
+CREATE TABLE chat_messages (
+    msg_day text,
+    username text,
+    message text,
+    ins_time timeuuid,
+    PRIMARY KEY (msg_day, ins_time)
+) WITH CLUSTERING ORDER BY (ins_time DESC);
+
+SELECT * FROM chat_messages WHERE msg_day = '20200427' ORDER BY ins_time DESC;
+SELECT token(msg_day), msg_day, ins_time, username FROM chat_messages;
+
+# DROP TABLE user_logs;
+CREATE TABLE user_logs (
+	log_day text,
+    topic text,
+    username text,
+    time timestamp,
+    data text,
+    PRIMARY KEY ((log_day, topic), time)
+) WITH CLUSTERING ORDER BY (time DESC);
+
+SELECT * FROM user_logs WHERE log_day='20200508' AND topic = 'login-logs' ORDER BY time DESC;
+SELECT * FROM user_logs WHERE log_day='20200508' AND topic = 'registration-logs' ORDER BY time DESC;
+SELECT * FROM user_logs WHERE log_day='20200508' AND topic = 'send-message-logs' ORDER BY time DESC;
+
+KAFKA:
+sudo docker pull bitnami/kafka:latest
+sudo docker run -d --name zookeeper-server --network host -e ALLOW_ANONYMOUS_LOGIN=yes bitnami/zookeeper:latest
+sudo docker run -d --name kafka-server --network host -e ALLOW_PLAINTEXT_LISTENER=yes -e KAFKA_CFG_ZOOKEEPER_CONNECT=127.0.0.1:2181 bitnami/kafka:latest
+sudo docker run -it --rm --network host -e KAFKA_CFG_ZOOKEEPER_CONNECT=127.0.0.1:2181 bitnami/kafka:latest kafka-topics.sh --list  --zookeeper 127.0.0.1:2181
+
+sudo docker exec -it kafka-server bash
+kafka-topics.sh --create --zookeeper 127.0.0.1:2181 --replication-factor 1 --partitions 1 --topic login-logs
+kafka-topics.sh --create --zookeeper 127.0.0.1:2181 --replication-factor 1 --partitions 1 --topic registration-logs
+kafka-topics.sh --create --zookeeper 127.0.0.1:2181 --replication-factor 1 --partitions 1 --topic send-message-logs
+kafka-topics.sh --list --zookeeper 127.0.0.1:2181
+kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic login-logs --from-beginning
+# kafka-topics.sh --delete --zookeeper 127.0.0.1:2181 --topic login-logs
+
+kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic login-logs --consumer-property group.id=test-consumer-group
+kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic registration-logs --consumer-property group.id=test-consumer-group
+kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic send-message-logs --consumer-property group.id=test-consumer-group
+kafka-consumer-groups.sh --bootstrap-server 127.0.0.1:9092 --describe --group test-consumer-group
+------------------------------------------------------------------------------------------------------------------------
+pip freeze > requirements.txt
+pip install -r requirements.txt

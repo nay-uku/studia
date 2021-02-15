@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<style>
+.times {
+     font-family: 'Times New Roman', Times, serif;
+}
+
+
+</style>
+<div class="container" style="border:1px solid black;height:100%;background-color:#B6B6B4;">
+    <div class="row">
+        <h3 class="times" style="margin:auto;
+        line-height:51px;
+        vertical-align:middle;">{{ post['title'] }}</h3>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-">
+
+            <div class="container">
+                <div class="row" style="border:1px solid black;">
+
+                    Utworzono przez: {{ post['author'] }}<br/>
+                    Dodano: {{ post['date_added'] }}
+
+
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg times mr-2" style="border:1px solid black">
+
+            {{ post['text'] }}
+
+        </div>
+    </div>
+
+    {% for comment in post['comments'] %}
+
+    <div class="row mb-5">
+        <div class="col-">
+
+            <div class="container">
+                <div class="row" style="border:1px solid black;">
+
+                    Utworzono przez: {{ comment['author'] }}<br/>
+                    Dodano: {{ comment['date_added'] }}
+
+
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg times mr-2" style="border:1px solid black">
+
+            {{ comment['text'] }}
+
+        </div>
+    </div>
+
+    {% endfor %}
+
+
+    {% if user %}
+
+    <div class="row mb-5">
+        <form method="post" action="{{ url_for('add_comment') }}">
+            <div class="form-group" style="width:100%;">
+                <label for="exampleFormControlTextarea1">Dodaj komentarz</label>
+                <input type="hidden" name="p_id" value="{{ post['_id'] }}"/>
+                <textarea class="form-control" id="exampleFormControlTextarea1" name="comment" rows="3"></textarea>
+                <button class="btn btn-lg btn-primary btn-block mt-2" type="submit">Dodaj</button>
+            </div>
+
+
+        </form>
+        {% endif %}
+    </div>
+
+</div>
+
+
+{% endblock %}

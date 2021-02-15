@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+{% block body %}
+<script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+<script>
+    const socket = io.connect("http://127.0.0.1:4444");
+
+    socket.on('connect', function() {
+        socket.emit('connect_notice', { user: "{{ user }}"})
+    });
+
+    socket.on('disconnect', function() {
+        socket.emit('disconnect_notice', { user: "{{ user }}"})
+    });
+
+    socket.on('add_message', function(msg) {
+        const newMsg = document.createElement('div');
+        newMsg.innerHTML = msg;
+        document.getElementById('messages').prepend(newMsg);
+    });
+
+    function send_msg(e){
+        e.preventDefault();
+        msg = msg_input.value.trim();
+        if (msg.length > 0) {
+            socket.emit('send_message', {
+                user: "{{ user }}",
+                message: msg
+            });
+            msg_input.value = '';
+        }
+    }
+</script>
+
+<div id="chat">
+    <h1>Chat</h1>
+    <form id="message_input_form" method="post" onsubmit="return send_msg(event);">
+        <input id="msg_input" maxlength="2048" placeholder="Wpisz tutaj swoją wiadomość" style="width:700px"
+               type="text">
+        <button type="submit">Wyślij</button>
+    </form>
+    <div id="messages">
+        {% if msgs %}
+            {% for msg in msgs %}
+                <div>{{ msg['time'] }} <b>{{ msg['username'] }}:&nbsp;</b> {{ msg['message'] }}</div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

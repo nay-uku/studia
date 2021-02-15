@@ -1,0 +1,212 @@
+{
+    "dolnośląskie": {
+        "liczba tweetów": 17487,
+        "% tweetów z przypisanymi województwami": 7.74,
+        "liczba politycznych tweetów": 6141,
+        "% politycznych tweetów w województwie": 35.12,
+        "liczba krajowych tweetów": 7311,
+        "% krajowych tweetów w województwie": 41.81
+    },
+    "kujawsko-pomorskie": {
+        "liczba tweetów": 6461,
+        "% tweetów z przypisanymi województwami": 2.86,
+        "liczba politycznych tweetów": 2214,
+        "% politycznych tweetów w województwie": 34.27,
+        "liczba krajowych tweetów": 2739,
+        "% krajowych tweetów w województwie": 42.39
+    },
+    "lubelskie": {
+        "liczba tweetów": 6021,
+        "% tweetów z przypisanymi województwami": 2.66,
+        "liczba politycznych tweetów": 1962,
+        "% politycznych tweetów w województwie": 32.59,
+        "liczba krajowych tweetów": 2601,
+        "% krajowych tweetów w województwie": 43.2
+    },
+    "lubuskie": {
+        "liczba tweetów": 4165,
+        "% tweetów z przypisanymi województwami": 1.84,
+        "liczba politycznych tweetów": 1445,
+        "% politycznych tweetów w województwie": 34.69,
+        "liczba krajowych tweetów": 1788,
+        "% krajowych tweetów w województwie": 42.93
+    },
+    "łódzkie": {
+        "liczba tweetów": 11748,
+        "% tweetów z przypisanymi województwami": 5.2,
+        "liczba politycznych tweetów": 4337,
+        "% politycznych tweetów w województwie": 36.92,
+        "liczba krajowych tweetów": 5413,
+        "% krajowych tweetów w województwie": 46.08
+    },
+    "małopolskie": {
+        "liczba tweetów": 21639,
+        "% tweetów z przypisanymi województwami": 9.57,
+        "liczba politycznych tweetów": 6533,
+        "% politycznych tweetów w województwie": 30.19,
+        "liczba krajowych tweetów": 8482,
+        "% krajowych tweetów w województwie": 39.2
+    },
+    "mazowieckie": {
+        "liczba tweetów": 82748,
+        "% tweetów z przypisanymi województwami": 36.61,
+        "liczba politycznych tweetów": 26092,
+        "% politycznych tweetów w województwie": 31.53,
+        "liczba krajowych tweetów": 30699,
+        "% krajowych tweetów w województwie": 37.1
+    },
+    "opolskie": {
+        "liczba tweetów": 4883,
+        "% tweetów z przypisanymi województwami": 2.16,
+        "liczba politycznych tweetów": 1751,
+        "% politycznych tweetów w województwie": 35.86,
+        "liczba krajowych tweetów": 2178,
+        "% krajowych tweetów w województwie": 44.6
+    },
+    "podkarpackie": {
+        "liczba tweetów": 5786,
+        "% tweetów z przypisanymi województwami": 2.56,
+        "liczba politycznych tweetów": 1956,
+        "% politycznych tweetów w województwie": 33.81,
+        "liczba krajowych tweetów": 2378,
+        "% krajowych tweetów w województwie": 41.1
+    },
+    "podlaskie": {
+        "liczba tweetów": 3503,
+        "% tweetów z przypisanymi województwami": 1.55,
+        "liczba politycznych tweetów": 1061,
+        "% politycznych tweetów w województwie": 30.29,
+        "liczba krajowych tweetów": 1869,
+        "% krajowych tweetów w województwie": 53.35
+    },
+    "pomorskie": {
+        "liczba tweetów": 14385,
+        "% tweetów z przypisanymi województwami": 6.36,
+        "liczba politycznych tweetów": 4833,
+        "% politycznych tweetów w województwie": 33.6,
+        "liczba krajowych tweetów": 6066,
+        "% krajowych tweetów w województwie": 42.17
+    },
+    "śląskie": {
+        "liczba tweetów": 15592,
+        "% tweetów z przypisanymi województwami": 6.9,
+        "liczba politycznych tweetów": 4972,
+        "% politycznych tweetów w województwie": 31.89,
+        "liczba krajowych tweetów": 6760,
+        "% krajowych tweetów w województwie": 43.36
+    },
+    "świętokrzyskie": {
+        "liczba tweetów": 2313,
+        "% tweetów z przypisanymi województwami": 1.02,
+        "liczba politycznych tweetów": 750,
+        "% politycznych tweetów w województwie": 32.43,
+        "liczba krajowych tweetów": 997,
+        "% krajowych tweetów w województwie": 43.1
+    },
+    "warmińsko-mazurskie": {
+        "liczba tweetów": 5319,
+        "% tweetów z przypisanymi województwami": 2.35,
+        "liczba politycznych tweetów": 1906,
+        "% politycznych tweetów w województwie": 35.83,
+        "liczba krajowych tweetów": 2552,
+        "% krajowych tweetów w województwie": 47.98
+    },
+    "wielkopolskie": {
+        "liczba tweetów": 16683,
+        "% tweetów z przypisanymi województwami": 7.38,
+        "liczba politycznych tweetów": 5108,
+        "% politycznych tweetów w województwie": 30.62,
+        "liczba krajowych tweetów": 6955,
+        "% krajowych tweetów w województwie": 41.69
+    },
+    "zachodniopomorskie": {
+        "liczba tweetów": 7300,
+        "% tweetów z przypisanymi województwami": 3.23,
+        "liczba politycznych tweetów": 2561,
+        "% politycznych tweetów w województwie": 35.08,
+        "liczba krajowych tweetów": 3465,
+        "% krajowych tweetów w województwie": 47.47
+    },
+    "": {
+        "liczba tweetów": 171095,
+        "% wszystkich tweetów": 43.08,
+        "liczba politycznych tweetów": 52911,
+        "% politycznych tweetów w województwie": 30.92,
+        "liczba krajowych tweetów": 65930,
+        "% krajowych tweetów w województwie": 38.53
+    },
+    "general": {
+        "najwięcej tweetów (top 3)": [
+            {
+                "woj": "mazowieckie",
+                "liczba": 82748
+            },
+            {
+                "woj": "małopolskie",
+                "liczba": 21639
+            },
+            {
+                "woj": "dolnośląskie",
+                "liczba": 17487
+            }
+        ],
+        "najwięcej politycznych tweetów (top 3)": [
+            {
+                "woj": "mazowieckie",
+                "liczba": 26092
+            },
+            {
+                "woj": "małopolskie",
+                "liczba": 6533
+            },
+            {
+                "woj": "dolnośląskie",
+                "liczba": 6141
+            }
+        ],
+        "najwięcej krajowych tweetów (top 3)": [
+            {
+                "woj": "mazowieckie",
+                "liczba": 30699
+            },
+            {
+                "woj": "małopolskie",
+                "liczba": 8482
+            },
+            {
+                "woj": "dolnośląskie",
+                "liczba": 7311
+            }
+        ],
+        "największy procent politycznych tweetów (top 3)": [
+            {
+                "woj": "łódzkie",
+                "liczba": 36.92
+            },
+            {
+                "woj": "opolskie",
+                "liczba": 35.86
+            },
+            {
+                "woj": "warmińsko-mazurskie",
+                "liczba": 35.83
+            }
+        ],
+        "największy procent krajowych tweetów (top 3)": [
+            {
+                "woj": "podlaskie",
+                "liczba": 53.35
+            },
+            {
+                "woj": "warmińsko-mazurskie",
+                "liczba": 47.98
+            },
+            {
+                "woj": "zachodniopomorskie",
+                "liczba": 47.47
+            }
+        ],
+        "średni % politycznych tweetów": 33.42,
+        "średni % krajowych tweetów": 43.595625
+    }
+}

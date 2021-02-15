@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<script type=text/javascript>
+        $(function() {
+          $('a#test').bind('click', function() {
+            $.getJSON('/background_process_test',
+                function(data) {
+              //do nothing
+            });
+            return false;
+          });
+        });
+</script>
+<div class="jumbotron text-left">
+    <h3>
+        {{ product_data['name'] }}
+    </h3>
+    {{ product_data['description'] }}
+    <br>
+    <div style="float: right;">Cena: {{ product_data['price'] }} zł</div>
+    <br>
+    <form method=POST action="{{ url_for('add_to_cart') }}" class="form-signin">
+        <input type="hidden" name="p_id" value="{{ product_data['p_id'] }}" />
+        <div>
+        <input type="number" name="number" style="float:right;"min="0" max="500" data-bind="value:replyNumber" />
+        </div><br/><br/>
+        <div>
+            <button class="btn btn-primary" style="float: right;" type="submit">Dodaj do koszyka</button>
+        </div>
+    </form>
+</div>
+<div style="text-align: center">
+    {% if last_view is not none %}
+        <p style="color: green">Ten produkt wyświetlił/ła ostatnio: <b>{{ last_view['user'] }}</b> {{ last_view['time_ago'] }} sekund temu.</p>
+    {% else %}
+    <p style="color: red">Ten produkt <b>nie był ostatnio wyświetlany</b> przez nikogo.</p>
+    {%endif %}
+</div>
+
+
+{% endblock %}

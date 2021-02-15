@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+
+
+
+<div class="jumbotron text-left">
+
+    {% if not cart %}
+
+    TWÓJ KOSZYK JEST AKTUALNIE PUSTY
+
+
+    {% else %}
+
+    {% for key, val in cart.items() %}
+
+    ID: {{ key.decode('utf-8') }}
+
+    Nazwa: {{ val.decode('utf-8').split('|')[0] }}
+    Cena: {{ val.decode('utf-8').split('|')[1] }}
+    Liczba: {{ val.decode('utf-8').split('|')[2] }}
+    <form method=POST action="{{ url_for('remove_from_cart') }}" class="form-signin">
+        <input type="hidden" name="p_id" value="{{ key.decode('utf-8') }}" />
+        <a href=# id=test><button class="btn btn-primary" type="submit" style="float: right;">Usuń z koszyka</button></a>
+    </form>
+        <br />
+
+
+    {% endfor %}
+
+
+    {% endif %}
+
+
+</div>
+
+
+{% endblock %}

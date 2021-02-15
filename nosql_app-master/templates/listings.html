@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="jumbotron text-left">
+    <form action="{{ url_for('search') }}", method=GET>
+        <p>
+            {{ search_form.q.label }}<br>
+            {{ search_form.q(size=32) }}
+        <button type="submit" class="btn btn-primary">Szukaj</button>
+
+    </form>
+    <br>
+    <table style="width:100%">
+        {% if products %}
+        {% for product in products %}
+        <tr>
+            <th><a href="{{ url_for('product') }}?p={{ product[0] }}"> {{ product[1] }} </a></th>
+        </tr>
+        <tr>
+            <td>{{ product[2] }}</td>
+        </tr>
+        <tr>
+            <td><br></td>
+        </tr>
+        {% endfor %}
+        {% else %}
+            <p class="mt-2 mb-2" style="color:#a71d2a">Nie znaleziono towaru</p>
+        {% endif %}
+    </table>
+</div>
+
+
+{% endblock %}

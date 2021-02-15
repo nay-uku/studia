@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div id="user_logs">
+    <h1 style="text-align: center">Logi użytkowników z dzisiaj</h1>
+    <br>
+    <div id="send_message_logs">
+        <h2 style="text-align: center">Logi wiadomości</h2><br>
+        <table style="width:100%; border: 1px solid black">
+            {% if send_message_logs %}
+            <tr>
+                <th>Time</th>
+                <th>Username</th>
+                <th>Data</th>
+            </tr>
+            {% for log in send_message_logs %}
+            <tr>
+                <td>{{ log['time'] }}</td>
+                <td>{{ log['username'] }}</td>
+                <td>{{ log['data'] }}</td>
+            </tr>
+            {% endfor %}
+            {% else %}
+                <p class="mt-2 mb-2" style="color:#a71d2a; text-align: center">Brak logów</p>
+            {% endif %}
+        </table>
+    </div>
+    <br>
+    <div id="registration_logs">
+        <h2 style="text-align: center">Logi rejestracji</h2><br>
+        <table style="width:100%; border: 1px solid black">
+            {% if registration_logs %}
+            <tr>
+                <th>Time</th>
+                <th>Username</th>
+                <th>Data</th>
+            </tr>
+            {% for log in registration_logs %}
+            <tr>
+                <td>{{ log['time'] }}</td>
+                <td>{{ log['username'] }}</td>
+                <td>{{ log['data'] }}</td>
+            </tr>
+            {% endfor %}
+            {% else %}
+                <p class="mt-2 mb-2" style="color:#a71d2a; text-align: center">Brak logów</p>
+            {% endif %}
+        </table>
+    </div>
+    <br>
+    <div id="login_logs">
+        <h2 style="text-align: center">Logi logowań</h2><br>
+        <table style="width:100%; border: 1px solid black">
+            {% if login_logs %}
+            <tr>
+                <th>Time</th>
+                <th>Username</th>
+                <th>Data</th>
+            </tr>
+            {% for log in login_logs %}
+            <tr>
+                <td>{{ log['time'] }}</td>
+                <td>{{ log['username'] }}</td>
+                <td>{{ log['data'] }}</td>
+            </tr>
+            {% endfor %}
+            {% else %}
+                <p class="mt-2 mb-2" style="color:#a71d2a; text-align: center">Brak logów</p>
+            {% endif %}
+        </table>
+    </div>
+</div>
+{% endblock %}
