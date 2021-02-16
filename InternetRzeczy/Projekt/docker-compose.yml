@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto
+    ports:
+      - 1883:1883
+  fastapi: 
+    image: fastapi
+    build: 
+      context: ./fastapi
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./readings.csv:/app/readings.csv
+      - ./means.csv:/app/means.csv
+    ports:
+      - 8000:8000
+    depends_on:
+      - mosquitto
+    
+networks:
+  default:
